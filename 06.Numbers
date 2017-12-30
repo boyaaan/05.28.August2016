@@ -1,0 +1,47 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+
+        int firstNum = (n / 100) % 10;
+        int secondNum = (n / 10) % 10;
+        int thirdNum = (n / 1) % 10;
+        int colom = firstNum + secondNum;
+        int road = firstNum + thirdNum;
+
+        for (int i = 0; i < colom ; i++)
+        {
+            for (int k = 0; k < road; k++)
+            {
+                if (n % 5 == 0)
+                {
+                    n -= firstNum;
+                }
+                else if (n % 3 == 0)
+                {
+                    n -= secondNum;
+                }
+                else if (n % 5 != 0 || n % 3 != 0)
+                {
+                    n += thirdNum;
+                }
+                Console.Write("{0} ",n);
+            }
+            Console.WriteLine();
+        }
+        
+        
+
+        
+
+       
+
+
+
+
+    }
+}
+
