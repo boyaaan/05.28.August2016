@@ -1,0 +1,20 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        decimal days = decimal.Parse(Console.ReadLine());
+        decimal salaryByDay = decimal.Parse(Console.ReadLine());
+        decimal kursDolar = decimal.Parse(Console.ReadLine());
+
+        decimal month = days * salaryByDay;
+        decimal yearSalary = (month * 12) + (month * 2.5m);
+        decimal tax = yearSalary * 0.25m;
+        decimal salary = yearSalary - tax;
+        decimal salaryPerDay = (salary * kursDolar) / 365;
+
+        Console.WriteLine("{0:f2}",salaryPerDay);
+    }
+}
+
