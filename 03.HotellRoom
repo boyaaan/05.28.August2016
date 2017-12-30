@@ -1,0 +1,79 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string months = Console.ReadLine().ToLower();
+        decimal countSleeping = decimal.Parse(Console.ReadLine());
+        decimal resultStudio = 0.0m;
+        decimal resultApartment = 0.0m;
+
+        decimal studio = 0.0m;
+        decimal apartment = 0.0m;
+
+
+        if (months == "may" || months == "october")
+        {
+            if (countSleeping > 7 && countSleeping <= 14)
+            {
+                studio = (50m * 0.05m) - 50m;
+                resultStudio = studio * countSleeping;
+                apartment = 65m * countSleeping;
+                resultApartment = apartment;
+            }
+            else if (countSleeping > 14)
+            {
+                studio = (50m * 0.30m) - 50m;
+                resultStudio = studio * countSleeping;
+                apartment = (65m * 0.10m) - 65m;
+                resultApartment = apartment * countSleeping;
+            }
+        }
+        else if (months == "june" || months == "september")
+        {
+            if (countSleeping > 14)
+            {
+                studio = (75.20m * 0.20m) - 75.20m;
+                resultStudio = studio * countSleeping;
+                apartment = (68.70m * 0.10m) - 68.70m;
+                resultApartment = apartment * countSleeping;
+            }
+            else
+            {
+
+                resultStudio = 75.20m * countSleeping;
+                resultApartment = 68.70m * countSleeping;
+            }
+        }
+        else if (months == "july" || months == "august")
+        {
+            if (countSleeping <= 14m)
+            {
+
+                resultStudio = 76m * countSleeping;
+
+                resultApartment = 77m * countSleeping;
+            }
+            else
+            {
+
+                resultStudio = 76 * countSleeping;
+                apartment = (77m * 0.10m) - 77m;
+                resultApartment = apartment * countSleeping;
+            }
+        }
+        Console.WriteLine("Apartment: {0:f2} lv.", Math.Abs(resultApartment));
+        Console.WriteLine("Studio: {0:f2} lv.", Math.Abs(resultStudio));
+
+
+
+    }
+
+
+}
+
+
+
+
+
