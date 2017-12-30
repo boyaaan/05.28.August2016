@@ -1,0 +1,86 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int seeDocter = 0;
+        int notSeeDocter = 0;
+
+
+
+        for (int i = 1; i <= n; i++)
+        {
+            int days = int.Parse(Console.ReadLine());
+
+            if (i % 3 == 0)
+            {
+                if (notSeeDocter > seeDocter)
+                {
+                    if (days > 0 && days <= 8)
+                    {
+                        seeDocter += days;
+                    }
+                    else
+                    {
+                        days = days - 8;
+                        seeDocter += 8;
+                        notSeeDocter += days;
+                    }
+                }
+                else
+                {
+                    if (days > 0 && days <= 7)
+                    {
+                        seeDocter += days;
+                    }
+                    else
+                    {
+                        days = days - 7;
+                        seeDocter += 7;
+                        notSeeDocter += days;
+                    }
+                }
+                
+            }
+            else
+            {
+                if (notSeeDocter > seeDocter)
+                {
+                    if (days > 0 && days <= 8)
+                    {
+                        seeDocter += days;
+                    }
+                    else
+                    {
+                        days = days - 8;
+                        seeDocter += 8;
+                        notSeeDocter += days;
+                    }
+                }
+                else
+                {
+                    if (days > 0 && days <= 7)
+                    {
+                        seeDocter += days;
+                    }
+                    else
+                    {
+                        days = days - 7;
+                        seeDocter += 7;
+                        notSeeDocter += days;
+                    }
+                }
+
+            }
+
+
+
+        }
+        Console.WriteLine("Treated patients: {0}.",seeDocter);
+        Console.WriteLine("Untreated patients: {0}.",notSeeDocter);
+
+    }
+}
+
